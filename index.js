@@ -22,13 +22,13 @@ client.login(process.env.token);
 // Welcome and Leave
 client.on("guildMemberAdd", member => {
 
-const welcomechannel = client.channel.get('715639424989528226');
+const welcomechannel = client.channel.cache.get('715639424989528226');
     if (!welcomechannel) return;
     channel.send (`Welcome to Isaiah Incorporatations ${member}, We wish you enjoy stay (because you wont be leaving)`)
 });
 
 client.on("guildMemberRemove", member => {
-const leavechannel = client.channel.get('715639424989528226');
+const leavechannel = client.channel.cache.get('715639424989528226');
     if (!leavechannel) return;
     channel.send (`Come on ${member} why did you have to leave?`)
 });
