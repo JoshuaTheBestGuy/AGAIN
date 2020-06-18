@@ -24,7 +24,7 @@ fs.readdir("./commands/", (err, files) => {
         let pull = require(`./commands/${f}`);
         client.commands.set(pull.config.name, pull);
         pull.config.aliases.forEach(alias => {
-            bot.aliases.set(alias, pull.config.name)
+            client.aliases.set(alias, pull.config.name)
         });
     });
 });
