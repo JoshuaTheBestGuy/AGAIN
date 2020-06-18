@@ -31,7 +31,7 @@ client.login(process.BOT_TOKEN)
 // Welcome and Leave
 
 client.on('guildMemberAdd', member => {
-    member.guild.channels.get('715639424989528226').send("Welcome to Isaiah Incorporatations ${member}, We wish you enjoy stay (because you wont be leaving)");
+    member.guild.channels.get('715639424989528226').send(`Welcome to Isaiah Incorporatations ${member}, We wish you enjoy stay (because you wont be leaving)`);
 });
 
 client.on("guildMemberRemove", member => {
