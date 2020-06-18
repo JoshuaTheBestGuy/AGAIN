@@ -33,12 +33,12 @@ client.login(process.BOT_TOKEN)
 const channel = member.guild.channels.cache.find(ch => ch.id === '715639424989528226');
     if (!channel) return;
     channel.send (`Welcome to Isaiah Incorporatations ${member}, We wish you enjoy stay (because you wont be leaving)`)
-})
+)
 
 const channel = member.guild.channels.cache.find(ch => ch.id === '715639460091527179');
     if (!channel) return;
     channel.send (`Come on ${member} why did you have to leave?`)
-})
+)
 
 // Kicking
 
