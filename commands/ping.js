@@ -6,3 +6,8 @@ client.on('message', msg => {
  msg.reply('pong');
  }
  });
+
+ module.exports.config = {
+     name: "ping",
+     aliases: [""]
+ }

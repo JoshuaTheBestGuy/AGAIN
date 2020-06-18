@@ -6,3 +6,8 @@ client.on('message', msg => {
  msg.reply('First line of code written on: 6/17/20.');
  }
  });
+
+ module.exports.config = {
+     name: "about",
+     aliases: [""]
+ }

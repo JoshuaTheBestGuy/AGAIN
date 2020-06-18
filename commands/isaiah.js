@@ -6,3 +6,8 @@ client.on('message', msg => {
  msg.reply('You called?');
  }
  });
+
+ module.exports.config = {
+     name: "isaiah",
+     aliases: [""]
+ }

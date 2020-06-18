@@ -6,3 +6,8 @@ client.on('message', msg => {
  msg.reply('dont touch me there');
  }
  });
+
+ module.exports.config = {
+     name: "no_no",
+     aliases: [""]
+ }

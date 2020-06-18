@@ -21,3 +21,8 @@ client.on("message", message => {
 })
 // ...
 client.login(process.BOT_TOKEN)
+
+module.exports.config = {
+    name: "kick",
+    aliases: [""]
+}

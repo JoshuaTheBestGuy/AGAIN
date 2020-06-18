@@ -7,3 +7,8 @@ module.exports = (client, message) => {
     return kick(message)
   }
 }
+
+module.exports.config = {
+    name: "message",
+    aliases: [""]
+}
