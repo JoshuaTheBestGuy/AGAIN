@@ -24,13 +24,13 @@ client.on("guildMemberAdd", member => {
 
 const welcomechannel = client.channels.cache.get('715639424989528226');
     if (!welcomechannel) return;
-    channel.send (`Welcome to Isaiah Incorporatations ${member}, We wish you enjoy stay (because you wont be leaving)`)
+    welcomechannel.send (`Welcome to Isaiah Incorporatations ${member}, We wish you enjoy stay (because you wont be leaving)`)
 });
 
 client.on("guildMemberRemove", member => {
 const leavechannel = client.channels.cache.get('715639460091527179');
     if (!leavechannel) return;
-    channel.send (`Come on ${member} why did you have to leave?`)
+    leavechannel.send (`Come on ${member} why did you have to leave?`)
 });
 
 // Kicking
