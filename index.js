@@ -10,7 +10,6 @@ require("./util/eventHandler")
 fs.readdir("./events/", (err, files) => {
   files.forEach(file => {
   const eventName = file.split(".")[0]
-  client.on(eventName, arg => eventHandler(client, arg))
   })
 })
 
