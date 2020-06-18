@@ -71,3 +71,9 @@ client.on('message', msg => {
    msg.reply('First line of code written on: 6/17/20.');
    }
    });
+
+   client.on('message', msg => {
+    if (msg.content === 'no no') {
+    msg.reply('dont touch me their');
+    }
+    });
