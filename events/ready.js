@@ -1,3 +1,6 @@
-module.exports = client => {
-  console.log(`Logged in as ${client.user.tag}!`)
+const Discord = require("discord.js")
+
+module.exports = bot => {
+    console.log(`${bot.user.username} is online`)
+    bot.user.setActivity("DashCraft", {type: ""});
 }
