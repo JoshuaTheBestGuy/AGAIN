@@ -28,6 +28,12 @@ client.on("guildMemberAdd", member => {
 })
 client.login(process.BOT_TOKEN)
 
+// Welcome and Leave
+
+bot.on('guildMemberAdd', member => {
+    member.guild.channels.get('715639424989528226').send("Welcome to Isaiah Incorporatations, We wish you enjoy stay (because you wont be leaving)"); 
+});
+
 // Kicking
 
 require("dotenv").config()
