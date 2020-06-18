@@ -7,10 +7,39 @@ const client = new Discord.Client()
 
 require("./util/eventHandler")
 
-fs.readdir("./events/", (err, files) => {
-  files.forEach(file => {
-  const eventName = file.split(".")[0]
-  })
+bot.commands = new Discord.Collection();
+bot.aliases = new Discord.Collection();
+
+fs.readdir("./commands/", (err, files) => {
+
+    if(err) console.log(err)
+
+    let jsfile = files.filter(f => f.split(".").pop() === "js")
+    if(jsfile.length <= 0) {
+         return console.log("[LOGS] Couldn't Find Commands!");
+    }
+
+    jsfile.forEach((f, i) => {
+        let pull = require(`./commands/${f}`);
+        bot.commands.set(pull.config.name, pull);
+        pull.config.aliases.forEach(alias => {
+            bot.aliases.set(alias, pull.config.name)
+        });
+    });
+});
+
+bot.on("message", async message => {
+    if(message.author.bot || message.channel.type === "dm") return;
+
+    let prefix = botsettings.prefix;
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+
+    if(!message.content.startsWith(prefix)) return;
+    let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
+    if(commandfile) commandfile.run(bot,message,args)
+
 })
 
 client.on('ready', () => {
@@ -31,51 +60,4 @@ const leavechannel = client.channels.cache.get('715639460091527179');
     leavechannel.send (`Come on ${member} why did you have to leave?`)
 });
 
-// Kicking
-
-require("dotenv").config()
-// ...
-client.on("message", message => {
-  if (message.content.startsWith("!kick")) {
-    const member = message.mentions.members.first()
-    if (!member) {
-      return message.reply(
-        `Who are you trying to kick? You must mention a user.`
-      )
-    }
-    if (!member.kickable) {
-      return message.reply(`I can't kick this user. Sorry!`)
-    }
-      .kick()
-      .then(() => message.reply(`${member.user.tag} was kicked.`))
-      .catch(error => message.reply(`Sorry, an error occured.`))
-  }
-})
-// ...
 client.login(process.BOT_TOKEN)
-
-// Custom Commands Kinda
-
-client.on('message', msg => {
- if (msg.content === 'isaiah') {
- msg.reply('You called?');
- }
- });
-
- client.on('message', msg => {
-  if (msg.content === 'ping') {
-  msg.reply('pong');
-  }
-  });
-
-  client.on('message', msg => {
-   if (msg.content === 'about') {
-   msg.reply('First line of code written on: 6/17/20.');
-   }
-   });
-
-   client.on('message', msg => {
-    if (msg.content === 'no no') {
-    msg.reply('dont touch me there');
-    }
-    });
