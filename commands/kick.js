@@ -1,4 +1,5 @@
 require("dotenv").config()
+const client = new Discord.Client();
 // ...
 client.on("message", message => {
   if (message.content.startsWith("!kick")) {
