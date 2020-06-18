@@ -9,9 +9,8 @@ require("./util/eventHandler")(bot)
 
 fs.readdir("./events/", (err, files) => {
   files.forEach(file => {
-    const eventHandler = require(`./events/${event}`)
-    const eventName = file.split(".")[0]
-    client.on(eventName, arg => eventHandler(client, arg))
+  const eventName = file.split(".")[0]
+  client.on(eventName, arg => eventHandler(client, arg))
   })
 })
 
