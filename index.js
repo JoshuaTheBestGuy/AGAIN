@@ -20,10 +20,12 @@ client.on('ready', () => {
 client.login(process.env.token);
 
 // Welcome and Leave
+bot.on('guildMemberAdd', member => {
 
 const welcomechannel = member.guild.channels.cache.find(ch => ch.id === '715639424989528226');
     if (!welcomechannel) return;
     channel.send (`Welcome to Isaiah Incorporatations ${member}, We wish you enjoy stay (because you wont be leaving)`)
+});
 
 const channel = member.guild.channels.cache.find(ch => ch.id === '715639460091527179');
     if (!channel) return;
