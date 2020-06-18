@@ -5,7 +5,7 @@ const Discord = require("discord.js")
 const fs = require("fs")
 const client = new Discord.Client()
 
-require("./util/eventHandler")(bot)
+require("./util/eventHandler")
 
 fs.readdir("./events/", (err, files) => {
   files.forEach(file => {
