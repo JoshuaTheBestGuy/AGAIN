@@ -19,15 +19,6 @@ client.on('ready', () => {
 
 client.login(process.env.token);
 
-require("dotenv").config()
-// ...
-client.on("guildMemberAdd", member => {
-  member.send(
-    `Welcome to Isaiah Incorporatations, We wish you enjoy stay (because you wont be leaving)`
-  )
-})
-client.login(process.BOT_TOKEN)
-
 // Welcome and Leave
 
 const channel = member.guild.channels.cache.find(ch => ch.id === '715639424989528226');
