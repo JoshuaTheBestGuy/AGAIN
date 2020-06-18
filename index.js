@@ -74,6 +74,6 @@ client.on('message', msg => {
 
    client.on('message', msg => {
     if (msg.content === 'no no') {
-    msg.reply('dont touch me their');
+    msg.reply('dont touch me there');
     }
     });
