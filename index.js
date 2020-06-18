@@ -31,7 +31,7 @@ client.login(process.BOT_TOKEN)
 // Welcome and Leave
 
 client.on("guildMemberAdd", member => {
-    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === '〔🛬〕arrivals')
+    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'welcome')
     welcomeChannel.send (`Welcome to Isaiah Incorporatations ${member}, We wish you enjoy stay (because you wont be leaving)`)
 })
 
