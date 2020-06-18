@@ -28,7 +28,7 @@ const welcomechannel = client.channels.cache.get('715639424989528226');
 });
 
 client.on("guildMemberRemove", member => {
-const leavechannel = client.channels.cache.get('715639424989528226');
+const leavechannel = client.channels.cache.get('715639460091527179');
     if (!leavechannel) return;
     channel.send (`Come on ${member} why did you have to leave?`)
 });
