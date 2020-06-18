@@ -7,8 +7,8 @@ const client = new Discord.Client()
 
 require("./util/eventHandler")
 
-bot.commands = new Discord.Collection();
-bot.aliases = new Discord.Collection();
+client.commands = new Discord.Collection();
+client.aliases = new Discord.Collection();
 
 fs.readdir("./commands/", (err, files) => {
 
@@ -28,7 +28,7 @@ fs.readdir("./commands/", (err, files) => {
     });
 });
 
-bot.on("message", async message => {
+client.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
 
     let prefix = botsettings.prefix;
