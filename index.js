@@ -27,11 +27,6 @@ client.login(process.env.token);
 
 require("dotenv").config()
 // ...
-client.on("message", msg => {
-  if (msg.content === "ping") {
-    msg.reply("Pong!")
-  }
-})
 client.on("guildMemberAdd", member => {
   member.send(
     `Welcome to Isaiah Incorporatations, We wish you enjoy stay (because you wont be leaving)`
