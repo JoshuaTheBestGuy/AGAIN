@@ -20,7 +20,7 @@ client.on('ready', () => {
 client.login(process.env.token);
 
 // Welcome and Leave
-client.on('guildMemberAdd', member => {
+client.on("guildMemberAdd", member => {
 
 const welcomechannel = member.guild.channels.cache.find(ch => ch.id === '715639424989528226');
     if (!welcomechannel) return;
