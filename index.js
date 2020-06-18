@@ -21,7 +21,6 @@ client.login(process.env.token);
 
 require("dotenv").config()
 // ...
-
 client.on("guildMemberAdd", member => {
   member.send(
     `Welcome to Isaiah Incorporatations, We wish you enjoy stay (because you wont be leaving)`
@@ -53,9 +52,22 @@ client.on("message", message => {
 // ...
 client.login(process.BOT_TOKEN)
 
+// Custom Commands Kinda
 
 client.on('message', msg => {
  if (msg.content === 'isaiah') {
  msg.reply('You called?');
  }
  });
+
+ client.on('message', msg => {
+  if (msg.content === 'ping') {
+  msg.reply('pong');
+  }
+  });
+
+  client.on('message', msg => {
+   if (msg.content === 'about') {
+   msg.reply('First line of code written on: 6/17/20.');
+   }
+   });
