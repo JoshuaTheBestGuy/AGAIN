@@ -17,12 +17,6 @@ client.on('ready', () => {
  console.log(`Logged in as ${client.user.tag}!`);
  });
 
-client.on('message', msg => {
- if (msg.content === 'ping') {
- msg.reply('pong');
- }
- });
-
 client.login(process.env.token);
 
 require("dotenv").config()
@@ -57,11 +51,3 @@ client.on("message", message => {
 })
 // ...
 client.login(process.BOT_TOKEN)
-
-// Custom Messages
-
-client.on('message', msg => {
- if (msg.content === 'isaiah') {
- msg.reply('You called?');
- }
- });
