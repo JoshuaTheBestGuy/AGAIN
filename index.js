@@ -45,8 +45,6 @@ client.on('ready', () => {
  console.log(`Logged in as ${client.user.tag}!`);
  });
 
-client.login(process.env.token);
-
 // Welcome and Leave
 client.on("guildMemberAdd", member => {
 
