@@ -59,4 +59,4 @@ const leavechannel = member.guild.channels.cache.get('715639460091527179');
     leavechannel.send (`Come on ${member} why did you have to leave?`)
 });
 
-client.login('NzIyOTg3ODQwNzQ0NzE4MzM2.Xu0xMQ.jX8nfFhk4-BT0IlmhW9Ky_nggWQ');
+client.login(process.env.token)
