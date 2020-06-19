@@ -7,8 +7,6 @@ const client = new Discord.Client()
 const { token, prefix } = require('./botsettings.json');
 
 
-console.log(botsettings.token);
-
 require("./util/eventHandler")
 
 client.commands = new Discord.Collection();
